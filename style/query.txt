@@ -1,0 +1,12 @@
+result table:
+
+INSERT INTO results (UserID, ScanID, Username, Outcome, UploadDate, Confidence)
+SELECT
+    u.id AS UserID,
+    s.id AS ScanID,
+    u.username,
+    s.outcome,
+    s.upload_date,
+    s.Confidence
+FROM scans s
+JOIN users u ON s.user_id = u.id;
